@@ -27,7 +27,7 @@ export default function Portfolios() {
       </div>
 
       <form className="flex gap-3">
-        <div className="bg-surface-1 border border-solid border-slate-800 rounded-xl flex items-center gap-2 px-4 py-2">
+        <div className="flex-1  bg-surface-1 border border-solid border-slate-800 rounded-xl flex items-center gap-2 px-4 py-2">
           <Search />
           <input type="text" placeholder="Search portfolios..." />
         </div>
