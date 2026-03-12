@@ -41,7 +41,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="bg-surface-1 border border-solid border-slate-800 rounded-lg hover:border-blue-400 p-4 duration-200 flex flex-col gap-4 group">
             <h2 className="text-xl sm:text-2xl md:text-3xl bg-surface-1 border border-solid border-slate-800 w-fit rounded-lg px-4 py-2 -mt-8 -ml-2 group-hover:border-blue-400 duration-200">
               Beautiful Templates

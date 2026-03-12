@@ -17,23 +17,25 @@ export default function Payments() {
         </Button>
       </div>
 
-      <form className="flex gap-3">
+      <form className="flex flex-wrap gap-3">
         <div className="flex-1  bg-surface-1 border border-solid border-slate-800 rounded-xl flex items-center gap-2 px-4 py-2">
           <Search />
           <input type="text" placeholder="Search portfolios..." />
         </div>
 
-        <select className="bg-surface-1 border border-solid border-slate-800 rounded px-2 py-1 outline-none rounded-xl">
-          <option value="all">All Blocks</option>
-          <option value="draft">Freelance Services</option>
-          <option value="published">Design Consultation</option>
-        </select>
+        <div className="flex gap-3">
+          <select className="bg-surface-1 border border-solid border-slate-800 rounded px-2 py-1 outline-none rounded-xl">
+            <option value="all">All Blocks</option>
+            <option value="draft">Freelance Services</option>
+            <option value="published">Design Consultation</option>
+          </select>
 
-        <select className="bg-surface-1 border border-solid border-slate-800 rounded px-2 py-1 outline-none rounded-xl">
-          <option value="all">All status</option>
-          <option value="draft">Draft</option>
-          <option value="published">Published</option>
-        </select>
+          <select className="bg-surface-1 border border-solid border-slate-800 rounded px-2 py-1 outline-none rounded-xl">
+            <option value="all">All status</option>
+            <option value="draft">Draft</option>
+            <option value="published">Published</option>
+          </select>
+        </div>
       </form>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">

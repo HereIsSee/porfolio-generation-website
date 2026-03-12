@@ -26,25 +26,27 @@ export default function Portfolios() {
         </Button>
       </div>
 
-      <form className="flex gap-3">
+      <form className="flex flex-wrap gap-3">
         <div className="flex-1  bg-surface-1 border border-solid border-slate-800 rounded-xl flex items-center gap-2 px-4 py-2">
           <Search />
           <input type="text" placeholder="Search portfolios..." />
         </div>
 
-        <select className="bg-surface-1 border border-solid border-slate-800 rounded px-2 py-1 outline-none rounded-xl">
-          <option value="all">All status</option>
-          <option value="draft">Draft</option>
-          <option value="published">Published</option>
-        </select>
+        <div className="flex flex-wrap gap-3">
+          <select className="bg-surface-1 border border-solid border-slate-800 rounded px-2 py-1 outline-none rounded-xl">
+            <option value="all">All status</option>
+            <option value="draft">Draft</option>
+            <option value="published">Published</option>
+          </select>
 
-        <div className="bg-surface-1 border border-solid border-slate-800 rounded-xl flex items-center gap-2 px-4 py-2">
-          <button>
-            <List />
-          </button>
-          <button>
-            <Grid3x3 />
-          </button>
+          <div className="bg-surface-1 border border-solid border-slate-800 rounded-xl flex items-center gap-2 px-4 py-2">
+            <button>
+              <List />
+            </button>
+            <button>
+              <Grid3x3 />
+            </button>
+          </div>
         </div>
       </form>
 

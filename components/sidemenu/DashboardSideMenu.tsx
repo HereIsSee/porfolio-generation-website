@@ -7,9 +7,9 @@ import {
   Settings,
 } from "lucide-react";
 
-export default function SideMenu() {
+export default function DashboardSideMenu() {
   return (
-    <div className="flex w-full flex-col gap-4 bg-surface-2 border-b border-slate-800 sm:max-w-[300px] sm:border-b-0 sm:border-r">
+    <div className="flex w-full flex-col gap-4 bg-surface-2 border-b border-slate-800 sm:max-w-[250px] sm:border-b-0 sm:border-r">
       <Link
         href="/"
         className="p-4 text-2xl font-bold text-primary border-b border-solid border-slate-700"
