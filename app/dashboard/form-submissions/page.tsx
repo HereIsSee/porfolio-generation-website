@@ -43,19 +43,19 @@ export default function FormSubmissions() {
         <div className="flex justify-between">
           <div>
             <h3 className="text-2xl font-semibold">Contact Form</h3>
-            <div className="text-secondary">5 submissions</div>
+            <div className="text-secondary text-sm">5 submissions</div>
           </div>
-          <div className="flex items-center text-secondary">
-            <Download />
+          <div className="inline-flex gap-1 items-center text-secondary text-md">
+            <Download size={18} />
             Export
           </div>
         </div>
 
         <div>
-          <div className="bg-background p-2 rounded-xl border border-solid border-slate-800 flex items-center gap-4">
+          <div className="bg-background p-3 rounded-xl border border-solid border-slate-800 flex items-center gap-4">
             <User />
             <div className="flex flex-col gap-2">
-              <div className="font-semibold">John Doe</div>
+              <div className="font-semibold text-xl">John Doe</div>
               <div className="flex gap-2">
                 <div className="inline-flex items-center gap-1 text-secondary text-sm">
                   <Mail size={16} />

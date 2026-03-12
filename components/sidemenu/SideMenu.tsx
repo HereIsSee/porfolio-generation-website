@@ -46,7 +46,7 @@ export default function SideMenu() {
           Payments
         </Link>
         <Link
-          href="/dashboard/settings"
+          href="/dashboard/settings/profile"
           className="flex items-center gap-2 hover:text-primary duration-200"
         >
           <Settings />
