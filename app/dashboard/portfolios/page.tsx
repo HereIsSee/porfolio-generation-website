@@ -13,7 +13,7 @@ import {
 
 export default function Portfolios() {
   return (
-    <div className="flex flex-col gap-4 p-4">
+    <div className="flex flex-col gap-4 p-4 max-w-[1000px] mx-auto w-full">
       <div className="flex justify-between">
         <div>
           <div className="text-3xl font-semibold">Portfolios</div>

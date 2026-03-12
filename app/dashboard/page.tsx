@@ -14,7 +14,7 @@ import {
 import { Button } from "@/components/ui/Button";
 export default function Login() {
   return (
-    <div className="flex flex-col gap-8 p-4">
+    <div className="flex flex-col gap-8 p-4 max-w-[1000px] mx-auto w-full">
       <div className="flex flex-col gap-2">
         <h1 className="text-3xl font-semibold text-primary">
           Welcome back, UserName
