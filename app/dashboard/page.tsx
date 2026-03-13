@@ -12,9 +12,14 @@ import {
   Clock2,
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-export default function Login() {
+import { DashboardLayout } from "@/components/dashboard/DashboardLayout";
+
+export default function DashboardPage() {
   return (
-    <div className="flex flex-col gap-8 p-4 max-w-[1000px] mx-auto w-full">
+    <DashboardLayout
+      header="Dashboard"
+      subheading="Here's what's happening with your portfolios today"
+    >
       <div className="flex flex-col gap-2">
         <h1 className="text-3xl font-semibold text-primary">
           Welcome back, UserName
@@ -202,6 +207,6 @@ export default function Login() {
           </div>
         </div>
       </div>
-    </div>
+    </DashboardLayout>
   );
 }

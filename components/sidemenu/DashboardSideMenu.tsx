@@ -9,7 +9,7 @@ import {
 
 export default function DashboardSideMenu() {
   return (
-    <div className="flex w-full flex-col gap-4 bg-surface-2 border-b border-slate-800 sm:max-w-[250px] sm:border-b-0 sm:border-r">
+    <div className="flex w-full  flex-col gap-4 bg-surface-2 border-b border-slate-800 sm:max-w-[250px] sm:border-b-0 sm:border-r sm:sticky sm:top-0 sm:self-start sm:h-screen">
       <Link
         href="/"
         className="p-4 text-2xl font-bold text-primary border-b border-solid border-slate-700"

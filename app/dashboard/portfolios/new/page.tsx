@@ -73,6 +73,21 @@ export default function NewPortfolio() {
     }));
   };
 
+  const handleContactChange = <
+    K extends keyof PortfolioDraft["contactSection"],
+  >(
+    field: K,
+    value: PortfolioDraft["contactSection"][K],
+  ) => {
+    setPortfolioData((prev) => ({
+      ...prev,
+      contactSection: {
+        ...prev.contactSection,
+        [field]: value,
+      },
+    }));
+  };
+
   return (
     <div className="mx-8 my-12">
       <div className="overflow-x-auto">
@@ -108,8 +123,10 @@ export default function NewPortfolio() {
 
         {selectedTab === "Profile" && (
           <Profile
-          // profile={portfolioData.profileSection}
-          // onChange={handleProfileChange}
+            profile={portfolioData.profileSection}
+            contact={portfolioData.contactSection}
+            onProfileChange={handleProfileChange}
+            onContactChange={handleContactChange}
           />
         )}
 

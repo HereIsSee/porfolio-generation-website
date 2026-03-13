@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import {
-  Plus,
   Search,
   List,
   Grid3x3,
@@ -10,22 +9,14 @@ import {
   SquareArrowOutUpRight,
   EllipsisVertical,
 } from "lucide-react";
+import { DashboardLayout } from "@/components/dashboard/DashboardLayout";
 
 export default function Portfolios() {
   return (
-    <div className="flex flex-col gap-4 p-4 max-w-[1000px] mx-auto w-full">
-      <div className="flex justify-between">
-        <div>
-          <div className="text-3xl font-semibold">Portfolios</div>
-          <p className="text-secondary">
-            Manage and organize all your portfolios websites
-          </p>
-        </div>
-        <Button>
-          <Plus />
-        </Button>
-      </div>
-
+    <DashboardLayout
+      header="Portfolios"
+      subheading="Manage and organize all your portfolios websites"
+    >
       <form className="flex flex-wrap gap-3">
         <div className="flex-1  bg-surface-1 border border-solid border-slate-800 rounded-xl flex items-center gap-2 px-4 py-2">
           <Search />
@@ -119,6 +110,6 @@ export default function Portfolios() {
           </div>
         ))}
       </div>
-    </div>
+    </DashboardLayout>
   );
 }

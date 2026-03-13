@@ -1,22 +1,13 @@
-import { Button } from "@/components/ui/Button";
 import { TransactionCard } from "@/components/payments/TransactionCard";
-import { Plus, Search, Download } from "lucide-react";
+import { Search, Download } from "lucide-react";
+import { DashboardLayout } from "@/components/dashboard/DashboardLayout";
 
 export default function Payments() {
   return (
-    <div className="flex flex-col gap-4 p-4 max-w-[1000px] mx-auto w-full">
-      <div className="flex justify-between">
-        <div>
-          <div className="text-3xl font-semibold">Payments</div>
-          <p className="text-secondary">
-            Track and manage all payments from your portfolios
-          </p>
-        </div>
-        <Button>
-          <Plus />
-        </Button>
-      </div>
-
+    <DashboardLayout
+      header="Payments"
+      subheading="Track and manage all payments from your portfolios"
+    >
       <form className="flex flex-wrap gap-3">
         <div className="flex-1  bg-surface-1 border border-solid border-slate-800 rounded-xl flex items-center gap-2 px-4 py-2">
           <Search />
@@ -98,6 +89,6 @@ export default function Payments() {
           />
         </div>
       </div>
-    </div>
+    </DashboardLayout>
   );
 }

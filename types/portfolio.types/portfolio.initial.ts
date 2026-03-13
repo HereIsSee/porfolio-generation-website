@@ -22,6 +22,13 @@ export const initialPortfolioDraft: PortfolioDraft = {
     location: "",
   },
 
+  contactSection: {
+    email: "",
+    phone: "",
+    location: "",
+    otherLinks: [],
+  },
+
   projects: [],
 
   workExperience: [],

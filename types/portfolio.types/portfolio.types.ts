@@ -39,6 +39,16 @@ export type PortfolioDraft = {
     location: string;
   };
 
+  contactSection: {
+    email: string;
+    phone: string;
+    location: string;
+    otherLinks: Array<{
+      label: string;
+      url: string;
+    }>;
+  };
+
   projects: Array<{
     id: string;
     title: string;

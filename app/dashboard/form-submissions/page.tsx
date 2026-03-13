@@ -8,24 +8,14 @@ import {
   Calendar,
   ChevronRight,
 } from "lucide-react";
+import { DashboardLayout } from "@/components/dashboard/DashboardLayout";
 
 export default function FormSubmissions() {
   return (
-    <div className="flex flex-col gap-4 p-4 max-w-[1000px] mx-auto w-full">
-      <div className="flex justify-between">
-        <div>
-          <div className="text-3xl font-semibold">Form Submissions</div>
-          <p className="text-secondary">
-            View and manage all form responses from your portfolios
-          </p>
-        </div>
-
-        <Button>
-          <Plus />
-          Create Form
-        </Button>
-      </div>
-
+    <DashboardLayout
+      header="Form Submissions"
+      subheading="View and manage all form responses from your portfolios"
+    >
       <form className="flex gap-3">
         <div className="flex-1 bg-surface-1 border border-solid border-slate-800 rounded-xl flex items-center gap-2 px-4 py-2">
           <Search />
@@ -72,6 +62,6 @@ export default function FormSubmissions() {
           </div>
         </div>
       </div>
-    </div>
+    </DashboardLayout>
   );
 }

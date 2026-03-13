@@ -1,23 +1,56 @@
 "use client";
 
 import { Info, Plus, X } from "lucide-react";
-import {
-  PortfolioDraft,
-  PortfolioPlan,
-  PortfolioStatus,
-} from "@/types/portfolio.types/portfolio.types";
+import { PortfolioDraft } from "@/types/portfolio.types/portfolio.types";
+
+type OtherLink = {
+  label: string;
+  url: string;
+};
 
 type ProfileProps = {
   profile: PortfolioDraft["profileSection"];
-  onChange: <K extends keyof PortfolioDraft["profileSection"]>(
+  contact: PortfolioDraft["contactSection"];
+  onProfileChange: <K extends keyof PortfolioDraft["profileSection"]>(
     field: K,
     value: PortfolioDraft["profileSection"][K],
   ) => void;
+  onContactChange: <K extends keyof PortfolioDraft["contactSection"]>(
+    field: K,
+    value: PortfolioDraft["contactSection"][K],
+  ) => void;
 };
+export default function Profile({
+  profile,
+  contact,
+  onProfileChange,
+  onContactChange,
+}: ProfileProps) {
+  const otherLinks: OtherLink[] = contact.otherLinks ?? [];
 
-export default function Profile({ profile, onChange }: ProfileProps) {
-  // const isTitleEmpty = profile.portfolioTitle.trim() === "";
-  // const isSlugEmpty = profile.urlSlug.trim() === "";
+  const handleAddOtherLink = () => {
+    onContactChange("otherLinks", [...otherLinks, { label: "", url: "" }]);
+  };
+
+  const handleRemoveOtherLink = (indexToRemove: number) => {
+    onContactChange(
+      "otherLinks",
+      otherLinks.filter((_, index) => index !== indexToRemove),
+    );
+  };
+
+  const handleOtherLinkChange = (
+    indexToUpdate: number,
+    field: keyof OtherLink,
+    value: string,
+  ) => {
+    onContactChange(
+      "otherLinks",
+      otherLinks.map((link, index) =>
+        index === indexToUpdate ? { ...link, [field]: value } : link,
+      ),
+    );
+  };
 
   return (
     <div className="flex flex-col gap-4">
@@ -176,27 +209,51 @@ export default function Profile({ profile, onChange }: ProfileProps) {
           <div className="flex flex-col gap-2">
             <div className="flex gap-2 items-center justify-between">
               <div className="text-primary text-sm font-medium">Other Lnks</div>
-              <button className="inline-flex items-center gap-0.5 text-blue-500 hover:text-blue-400 transition-colors">
+              <button
+                type="button"
+                onClick={handleAddOtherLink}
+                className="inline-flex items-center gap-0.5 text-blue-500 hover:text-blue-400 transition-colors"
+              >
                 <Plus />
                 <span className="text-sm font-medium">Add</span>
               </button>
             </div>
-            {/* This part */}
-            <div className="flex gap-2 flex-wrap">
-              <input
-                type="text"
-                placeholder="Label (eg. Twitter)"
-                className="flex-1 min-w-0 rounded-xl border border-slate-800 bg-background p-3 text-primary transition-colors focus:border-blue-500 focus:outline-none"
-              />
-              <input
-                type="text"
-                placeholder="URL"
-                className="flex-1 min-w-0 rounded-xl border border-slate-800 bg-background p-3 text-primary transition-colors focus:border-blue-500 focus:outline-none"
-              />
 
-              <button className="inline-flex items-center justify-center rounded-xl bg-red-500/20 p-3 text-red-500 transition-colors hover:bg-red-500/10">
-                <X />
-              </button>
+            <div id="other-links" className="flex flex-col gap-2">
+              {otherLinks.map((link, index) => (
+                <div
+                  key={index}
+                  className="flex gap-2 flex-wrap justify-center items-center"
+                >
+                  <input
+                    type="text"
+                    value={link.label}
+                    onChange={(e) =>
+                      handleOtherLinkChange(index, "label", e.target.value)
+                    }
+                    placeholder="Label (eg. Twitter)"
+                    className="flex-1 min-w-0 rounded-xl border border-slate-800 bg-background p-3 text-primary transition-colors focus:border-blue-500 focus:outline-none"
+                  />
+
+                  <input
+                    type="text"
+                    value={link.url}
+                    onChange={(e) =>
+                      handleOtherLinkChange(index, "url", e.target.value)
+                    }
+                    placeholder="URL"
+                    className="flex-1 min-w-0 rounded-xl border border-slate-800 bg-background p-3 text-primary transition-colors focus:border-blue-500 focus:outline-none"
+                  />
+
+                  <button
+                    type="button"
+                    onClick={() => handleRemoveOtherLink(index)}
+                    className="inline-flex items-center gap-0.5 rounded-xl bg-red-500/10 p-2 text-red-500 transition-colors hover:bg-red-500/40"
+                  >
+                    <X />
+                  </button>
+                </div>
+              ))}
             </div>
           </div>
         </div>
