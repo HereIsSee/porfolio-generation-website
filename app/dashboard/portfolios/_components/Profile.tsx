@@ -21,7 +21,7 @@ export default function Profile({ profile, onChange }: ProfileProps) {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex w-full flex-col gap-2 rounded-xl border border-solid border-slate-800 bg-surface-1 p-4 max-w-sm">
+      <div className="flex flex-col gap-2 rounded-xl border border-solid border-slate-800 bg-surface-1 p-4">
         <h1 className="text-xl font-semibold">Profile Information</h1>
 
         <div className="flex flex-col gap-4">
@@ -99,7 +99,7 @@ export default function Profile({ profile, onChange }: ProfileProps) {
         </div>
       </div>
 
-      <div className="flex w-full flex-col gap-2 rounded-xl border border-solid border-slate-800 bg-surface-1 p-4 max-w-sm">
+      <div className="flex w-full flex-col gap-2 rounded-xl border border-solid border-slate-800 bg-surface-1 p-4">
         <h1 className="text-xl font-semibold">Contact Information</h1>
 
         <div className="flex flex-col gap-4">
@@ -181,17 +181,17 @@ export default function Profile({ profile, onChange }: ProfileProps) {
                 <span className="text-sm font-medium">Add</span>
               </button>
             </div>
-
-            <div className="flex gap-2">
+            {/* This part */}
+            <div className="flex gap-2 flex-wrap">
               <input
                 type="text"
                 placeholder="Label (eg. Twitter)"
-                className="rounded-xl border border-slate-800 bg-background p-3 text-primary transition-colors focus:border-blue-500 focus:outline-none"
+                className="flex-1 min-w-0 rounded-xl border border-slate-800 bg-background p-3 text-primary transition-colors focus:border-blue-500 focus:outline-none"
               />
               <input
                 type="text"
                 placeholder="URL"
-                className="rounded-xl border border-slate-800 bg-background p-3 text-primary transition-colors focus:border-blue-500 focus:outline-none"
+                className="flex-1 min-w-0 rounded-xl border border-slate-800 bg-background p-3 text-primary transition-colors focus:border-blue-500 focus:outline-none"
               />
 
               <button className="inline-flex items-center justify-center rounded-xl bg-red-500/20 p-3 text-red-500 transition-colors hover:bg-red-500/10">

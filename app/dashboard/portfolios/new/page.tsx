@@ -98,7 +98,7 @@ export default function NewPortfolio() {
         </div>
       </div>
 
-      <div className="mt-8 flex justify-start">
+      <div className="mt-8 max-w-[800px]">
         {selectedTab === "Basic Info" && (
           <BasicInfo
             portfolio={portfolioData.portfolio}
